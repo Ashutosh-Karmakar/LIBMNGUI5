@@ -14,13 +14,13 @@ entity Subscriber: cuid, managed{
     Location: String(200);
 }
 
-entity BookStock: cuid, managed{
-    Book : Association to Books;
+entity BooksStock: cuid, managed{
+    Book : UUID;
     Quantity: Integer;
 }
 
 entity Borrow: cuid, managed{
-    Book: Association to Books;
-    Subscriber: Association to Subscriber;
+    Book: UUID;
+    Subscriber: UUID;
     Quantity: Integer;
 }

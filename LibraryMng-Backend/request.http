@@ -1,10 +1,50 @@
-#create Request
+### create Request
 
-POST http://localhost:8080/odata/v4/AdminService/Products
+POST http://localhost:8080/odata/v4/LibService/Books
 Content-Type: application/json
 
 {
-    "ID": 1,
-    "title" : "New Product",
-    "descr": "new"
+    "Title": "Harry Potter",
+    "Author": "JK Rowling",
+    "Genres": "Fantasy"
+}
+
+### create Subscriber
+
+POST http://localhost:8080/odata/v4/LibService/Subscriber
+Content-Type: application/json
+
+{
+    "Name" : "Ashutosh",
+    "Age": 24,
+    "Location": "Odisha"
+}
+
+### create Books Stock
+
+POST http://localhost:8080/odata/v4/LibService/BooksStock
+Content-Type: application/json
+
+{
+    "Book" : "cf7e1b96-9693-47e5-8e49-e6fbbe075d5c",
+    "Quantity": 1
+}
+
+### create Borrow
+
+POST http://localhost:8080/odata/v4/LibService/Borrow
+Content-Type: application/json
+
+{
+    "Book": {
+        "Title": "Harry Potter",
+        "Author": "JK Rowling",
+        "Genres": "Fantasy"
+    },
+    "Subscriber": {
+        "Name" : "Ashutosh",
+        "Age": 24,
+        "Location": "Odisha"
+    },
+    "Quantity": 1
 }
