@@ -6,6 +6,7 @@ entity Books: cuid, managed{
     Title: String(100);
     Author: String(100);
     Genres: String(100);
+    Stock: Integer;
 }
 
 entity Subscriber: cuid, managed{
